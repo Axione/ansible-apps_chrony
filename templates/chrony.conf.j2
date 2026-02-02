@@ -48,11 +48,9 @@ local stratum {{ chrony_local_stratum }}
 # Logs
 ##################################
 {% if chrony_noclientlog is sameas true %}
-# Disable logging of individual client accesses
 noclientlog
 {% endif %}
 log {{ chrony_log|join(' ') }}
-# Send a message to syslog if a clock adjustment is larger than {{ chrony_logchange }} seconds.
 logchange {{ chrony_logchange }}
 logdir {{ chrony_logdir }}
 
@@ -60,7 +58,6 @@ logdir {{ chrony_logdir }}
 # Hardware Synchronisation
 ##################################
 {% if chrony_rtcsync_enabled | bool %}
-# Enable kernel RTC synchronization.
 rtcsync
 {% endif %}
 {% if chrony_burst_enabled | bool %}
