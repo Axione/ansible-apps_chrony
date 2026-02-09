@@ -20,8 +20,11 @@
 
 ## Description
 
-Configures the time server chrony
+Chrony continuously measures clock offset and network delay, selects the most reliable sources, and adjusts the system clock.
 
+This role can be use to configure servers or clients. Basically its the same, just the are in differents stratum.
+
+Benchmark on this role >
 install time = 1/run 20.25s -  2/run 6.60s
 
 
